@@ -3,7 +3,7 @@ import { exec } from 'child_process';
 
 let tray: Tray | null = null;
 
-const BATTERY_LOW_THRESHOLD = 60;
+const BATTERY_LOW_THRESHOLD = 20;
 
 function checkBatteryStatus() {
   console.info('Checking battery status...');
@@ -42,6 +42,9 @@ function checkBatteryStatus() {
 }
 
 app.on('ready', () => {
+  // Hide the dock icon
+  app.dock.hide();
+
   // 每隔一段时间检查电池状态
   checkBatteryStatus();
   setInterval(checkBatteryStatus, 4 * 60 * 60 * 1000);
