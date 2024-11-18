@@ -27,5 +27,8 @@
     "directories": {
       "buildResources": "resources"
     }
+  },
+  "packerConfig": {
+    "icon": "resources/app.icns"
   }
 }
